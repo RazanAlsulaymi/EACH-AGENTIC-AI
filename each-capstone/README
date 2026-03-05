@@ -1,34 +1,11 @@
-Node.js >= 18
-npm or pnpm
-
-Python >= 3.10
-pip
-
-
-Step 1 — Clone the Repository:
-git clone <repository-url>
-cd each-v2
-
-Step 2 — Setup Backend:
-cd backend
-
-Windowa
-python -m venv .venv
-.venv\Scripts\activate
-
-Mac / Linux
-python -m venv .venv
-source .venv/bin/activate
-
-
-Step 3 — Install Backend Dependencies:
+— Install Backend Dependencies:
 pip install -r requirements.txt
 
-Step 4 — Run Backend Server:
+— Run Backend Server:
 python -m uvicorn app:app --reload --port 8003
 
-Step 5 — Setup Frontend:
+— Setup Frontend:
 npm install
 
-Step 6 — Run Frontend:
+— Run Frontend:
 npm run dev
