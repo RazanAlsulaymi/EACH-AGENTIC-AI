@@ -79,8 +79,6 @@ EACH uses a **LangGraph Swarm architecture** where different agents collaborate 
 
 <p align="center">
 <strong>EACH — Every Ability, Celebrated Here</strong><br>
-Agentic AI platform for personalized special education planning.
-</p>
 
 The poster illustrates the complete system architecture, including the multi-agent workflow, implemented platform features, supported diagnoses, bilingual capabilities, and the technology stack behind the EACH system.
 
