@@ -136,8 +136,6 @@ The poster illustrates the complete system architecture, including the multi-age
 
 ---
 
----
-
 # References
 
 This project was developed during the **Tuwaiq Academy Agentic AI Bootcamp (2026)**.
