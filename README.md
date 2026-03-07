@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="frontend/public/logo.png" width="200"/>
+  <img src="EACH/frontend/public/logo.png" width="200"/>
 </p>
 
 <h1 align="center">EACH</h1>
