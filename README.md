@@ -44,25 +44,6 @@ EACH uses a **LangGraph Swarm architecture** where different agents collaborate 
 
 ---
 
-# System Workflow
-Teacher Message
-↓
-Orchestrator
-↓
-Assessment Agent
-↓
-Planning Agent
-↓
-Reflection Agent
-↓
-Teacher Approval
-↓
-Evaluation Agent
-
-This workflow ensures that plans are **context-aware, reviewed, and evaluated** instead of generated in a single step.
-
----
-
 # Key Features
 
 | Feature | Description |
