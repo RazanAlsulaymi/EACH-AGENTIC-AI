@@ -135,3 +135,12 @@ This workflow ensures that plans are **context-aware, reviewed, and evaluated** 
 The poster illustrates the complete system architecture, including the multi-agent workflow, implemented platform features, supported diagnoses, bilingual capabilities, and the technology stack behind the EACH system.
 
 ---
+
+---
+
+# References
+
+This project was developed during the **Tuwaiq Academy Agentic AI Bootcamp (2026)**.
+
+🔗 **AISA Architecture Reference**  
+[https://link-to-the-paper-or-resource](https://zenodo.org/records/18161880)
