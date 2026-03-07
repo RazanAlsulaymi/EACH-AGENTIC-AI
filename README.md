@@ -43,31 +43,83 @@ EACH uses a **LangGraph Swarm architecture** where different agents collaborate 
 | **Evaluation Agent** | Plan Scorer | Records teacher approval and evaluation score |
 
 ---
+# System Workflow
+
+```
+Teacher Message
+      ↓
+   Orchestrator
+      ↓
+ Assessment Agent
+      ↓
+   Planning Agent
+      ↓
+ Reflection Agent
+      ↓
+ Teacher Approval
+      ↓
+ Evaluation Agent
+```
+
+This workflow ensures that plans are **context-aware, reviewed, and evaluated** instead of generated in a single step.
+
+---
 
 # Key Features
 
 | Feature | Description |
 |------|-------------|
-| Multi-Agent Planning | Structured AI workflow instead of a single chatbot |
-| Diagnosis-Aware Planning | Uses diagnosis-specific skill files |
-| Session Memory | Maintains student context across conversations |
-| Plan Quality Review | Reflection agent validates plan quality |
-| Teacher Evaluation | Plans can be approved and scored |
-| Document Analysis | Uploaded IEP or homework files can be analyzed |
-| Arabic & English Support | Responses adapt to teacher language |
+| **Multi-Agent Planning** | Structured AI workflow instead of a single chatbot |
+| **Diagnosis-Aware Planning** | Uses diagnosis-specific skill files |
+| **Session Memory** | Maintains student context across conversations |
+| **Long-Term Memory** | Stores past plans, milestones, and progress |
+| **Plan Quality Review** | Reflection agent validates plan quality |
+| **Human-in-the-Loop Approval** | Teachers must approve plans before they are finalized |
+| **Teacher Evaluation** | Plans can be approved and scored |
+| **Document Analysis** | Uploaded IEP or homework files can be analyzed |
+| **Arabic & English Support** | Responses adapt to teacher language |
+| **Streaming Responses** | Real-time agent progress updates via `/chat/stream` |
 
 ---
 
-# Backend Components
+# Backend Architecture
+
+| Component | Description |
+|--------|-------------|
+| **FastAPI Backend** | Main backend API powering chat, planning, evaluation, and file analysis |
+| **LangGraph Swarm** | Multi-agent orchestration system |
+| **LangChain** | LLM integration and prompt execution |
+| **Supabase Database** | Stores students, sessions, plans, milestones, and logs |
+| **OpenAI GPT Models** | Used for orchestration, planning, reflection, and evaluation |
+| **Gemini Flash** | Used for document OCR and structured file analysis |
+| **Skill Files** | Diagnosis-specific knowledge files used by the planning agent |
+| **Memory System** | Maintains context and long-term student learning history |
+
+---
+
+# Frontend
 
 | Component | Technology |
-|--------|-------------|
-| Backend Framework | FastAPI |
-| Agent Orchestration | LangGraph Swarm |
-| LLM Integration | LangChain |
+|----------|-------------|
+| UI Framework | React + Vite |
+| Styling | Tailwind CSS |
+| Chat Interface | Real-time agent conversation |
+| Voice Input | Web Speech API |
+| State Handling | React state + API integration |
+
+---
+
+# Technology Stack
+
+| Layer | Technology |
+|------|-------------|
+| LLM | GPT-4o |
+| Agent Framework | LangGraph Swarm |
+| Backend | FastAPI |
+| Frontend | React + Vite |
 | Database | Supabase |
-| LLM Models | OpenAI GPT |
-| Document Analysis | Gemini Flash |
+| OCR / File Analysis | Gemini 2.0 Flash |
+| Voice Input | Web Speech API |
 
 ---
 
