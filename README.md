@@ -70,19 +70,18 @@ EACH uses a **LangGraph Swarm architecture** where different agents collaborate 
 | Document Analysis | Gemini Flash |
 
 ---
----
-
----
 
 ## Project Poster
 
 <p align="center">
-  <img src="EACH/assets/PHOTO-2026-03-04-23-38-23.jpg" width="1000">
+  <img src="EACH/poster.png" width="1000">
 </p>
 
 <p align="center">
-EACH — Every Ability, Celebrated Here  
+<strong>EACH — Every Ability, Celebrated Here</strong><br>
 Agentic AI platform for personalized special education planning.
 </p>
+
+The poster illustrates the complete system architecture, including the multi-agent workflow, implemented platform features, supported diagnoses, bilingual capabilities, and the technology stack behind the EACH system.
 
 ---
