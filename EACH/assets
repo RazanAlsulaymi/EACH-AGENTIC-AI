@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EACH | كُل — Technical Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0A0F1E;
+  --paper: #F7F6F1;
+  --navy: #0E1E40;
+  --teal: #0B7B74;
+  --gold: #C9A84C;
+  --warm: #F0EBE0;
+  --muted: #8B8FA8;
+  --border: rgba(14,30,64,0.12);
+  --agent-1: #0B7B74;
+  --agent-2: #1B4F9C;
+  --agent-3: #7B3F9E;
+  --agent-4: #C9622A;
+  --agent-5: #1B7A3E;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  background: #D6D0C4;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.poster {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: var(--paper);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--navy);
+  padding: 52px 56px 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 60% at 110% 50%, rgba(11,123,116,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at -10% 50%, rgba(201,168,76,0.15) 0%, transparent 50%);
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-wrap {
+  width: 88px; height: 88px;
+  background: white;
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.logo-wrap img { width: 100%; border-radius: 12px; }
+
+.header-title h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+  line-height: 1;
+  direction: ltr;
+  text-align: left;
+}
+
+.header-title .subtitle-en {
+  color: rgba(255,255,255,0.65);
+  font-size: 1.05rem;
+  font-weight: 300;
+  margin-top: 6px;
+  direction: ltr;
+}
+
+.header-title .subtitle-ar {
+  color: var(--gold);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 3px;
+  direction: rtl;
+}
+
+.header-meta {
+  text-align: left;
+  direction: ltr;
+  border-left: 1px solid rgba(255,255,255,0.15);
+  padding-left: 32px;
+}
+
+.tag-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.team-names {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  direction: ltr;
+}
+
+.pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.5px;
+}
+
+/* ── BODY ── */
+.body {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0;
+  min-height: 900px;
+}
+
+.sidebar {
+  background: var(--warm);
+  border-left: 1px solid var(--border);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.main {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── SECTION LABELS ── */
+.sec-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  direction: ltr;
+}
+
+/* ── PROBLEM BOX ── */
+.problem-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.3;
+  direction: ltr;
+}
+
+.divider { height: 1px; background: var(--border); margin: 12px 0; }
+
+/* ── SURVEY BARS ── */
+.survey-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.bar-row { margin-bottom: 12px; }
+.bar-row:last-child { margin-bottom: 0; }
+
+.bar-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  direction: ltr;
+}
+
+.bar-name { font-size: 0.75rem; color: #4A5568; }
+.bar-pct { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600; color: var(--navy); }
+
+.bar-track {
+  height: 7px;
+  background: #E8E4DA;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+/* ── FEATURES GRID ── */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.feat-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  direction: ltr;
+}
+
+.feat-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.feat-text { flex: 1; }
+.feat-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+.feat-desc { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+
+/* ── SWARM FLOW ── */
+.swarm-section {
+  background: var(--navy);
+  border-radius: 12px;
+  padding: 26px 28px;
+  direction: ltr;
+}
+
+.swarm-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.swarm-sub {
+  font-size: 0.73rem;
+  color: rgba(255,255,255,0.45);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.swarm-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+}
+
+.agent-node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.agent-node:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -10px;
+  top: 22px;
+  color: rgba(255,255,255,0.3);
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.agent-chip {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.agent-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  letter-spacing: 0.3px;
+  margin-bottom: 3px;
+}
+
+.agent-role {
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.agent-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.5);
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* ── LANGUAGE ROW ── */
+.lang-row {
+  display: flex;
+  gap: 10px;
+  direction: ltr;
+}
+
+.lang-card {
+  flex: 1;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.lang-flag { font-size: 1.8rem; margin-bottom: 6px; }
+.lang-name { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+.lang-note { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+
+/* ── DIAGNOSES ── */
+.diag-row {
+  display: flex;
+  gap: 8px;
+  direction: ltr;
+}
+
+.diag-chip {
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+  border: 1px solid;
+}
+
+.diag-chip .d-icon { font-size: 1.3rem; margin-bottom: 4px; }
+.diag-chip .d-name { font-size: 0.7rem; font-weight: 700; }
+.diag-chip .d-ar { font-size: 0.65rem; opacity: 0.7; margin-top: 1px; }
+
+/* ── TECH STACK ── */
+.tech-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  direction: ltr;
+}
+
+.tech-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 12px;
+}
+
+.tech-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tech-name { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--navy); font-weight: 600; }
+.tech-role { font-size: 0.65rem; color: var(--muted); margin-left: 2px; }
+
+/* ── MISSION ── */
+.mission-box {
+  background: linear-gradient(135deg, var(--teal) 0%, #0B5E58 100%);
+  border-radius: 12px;
+  padding: 22px 26px;
+  direction: rtl;
+}
+
+.mission-ar {
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.8;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.mission-en {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  direction: ltr;
+  font-style: italic;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  padding: 20px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  direction: ltr;
+}
+
+.footer-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.footer-center {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+}
+
+.footer-right {
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  opacity: 0.8;
+}
+
+/* ── SIDEBAR SPECIFIC ── */
+.problem-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.pain-list { list-style: none; padding: 0; }
+.pain-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #374151;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  direction: ltr;
+  line-height: 1.4;
+}
+
+.pain-list li:last-child { border-bottom: none; }
+.pain-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 5px; }
+
+.scope-badges { display: flex; flex-direction: column; gap: 6px; }
+.scope-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.73rem;
+  direction: ltr;
+  padding: 6px 10px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.scope-check { color: var(--teal); font-weight: 700; font-size: 0.7rem; flex-shrink: 0; }
+.scope-x { color: #DC2626; font-weight: 700; font-size: 0.7rem; flex-shrink: 0; }
+
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-grid">
+      <div class="logo-wrap">
+        <img src="PHOTO-2026-03-04-23-38-23.jpg" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'font-family:Syne,sans-serif;font-weight:800;font-size:1.6rem;color:var(--navy)\'>E</div>'">
+      </div>
+
+      <div class="header-title">
+        <h1>EACH | كُل</h1>
+        <div class="subtitle-en">Every Ability, Celebrated Here</div>
+        <div class="subtitle-ar">كُل قدرة، نحتفي بها</div>
+        <div class="stack-pills">
+          <span class="pill">LangGraph Swarm</span>
+          <span class="pill">GPT-4o</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">React + Vite</span>
+          <span class="pill">Supabase</span>
+          <span class="pill">Gemini 2.0 Flash</span>
+          <span class="pill">Web Speech API</span>
+        </div>
+      </div>
+
+      <div class="header-meta">
+        <div class="tag-badge">Tuwaiq Academy 2026</div>
+        <div class="team-names">
+          Leen Alhazmi<br>
+          Nada Alomar<br>
+          Razan Alsulaymi
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Problem Stats -->
+      <div>
+        <div class="sec-label">The Problem</div>
+        <div class="problem-box">
+          <div class="stat-row">
+            <span class="stat-num">3–5</span>
+            <span class="stat-label">hours/week on manual<br>lesson planning</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat-row">
+            <span class="stat-num">0</span>
+            <span class="stat-label">Arabic AI tools for<br>special education</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat-row">
+            <span class="stat-num">4</span>
+            <span class="stat-label">diagnoses served with<br>no unified platform</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Survey -->
+      <div>
+        <div class="sec-label">Field Survey · 28 Stakeholders</div>
+        <div class="survey-box">
+          <div class="bar-row">
+            <div class="bar-meta">
+              <span class="bar-name">Would use weekly</span>
+              <span class="bar-pct">63%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:63%;background:var(--teal);"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-meta">
+              <span class="bar-name">Rate as very important</span>
+              <span class="bar-pct">63%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:63%;background:var(--agent-2);"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-meta">
+              <span class="bar-name">Need bilingual support</span>
+              <span class="bar-pct">90%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--gold);"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-meta">
+              <span class="bar-name">Plan generation &lt; 5 min</span>
+              <span class="bar-pct">Target</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--agent-5);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Out of Scope -->
+      <div>
+        <div class="sec-label">Scope Boundaries</div>
+        <div class="scope-badges">
+          <div class="scope-item"><span class="scope-check">✓</span> Lesson plan generation</div>
+          <div class="scope-item"><span class="scope-check">✓</span> IEP document analysis (OCR)</div>
+          <div class="scope-item"><span class="scope-check">✓</span> Voice + file input</div>
+          <div class="scope-item"><span class="scope-x">✗</span> Clinical diagnosis</div>
+          <div class="scope-item"><span class="scope-x">✗</span> Noor platform integration</div>
+          <div class="scope-item"><span class="scope-x">✗</span> Real-time classroom monitoring</div>
+          <div class="scope-item"><span class="scope-x">✗</span> Legal IEP generation</div>
+        </div>
+      </div>
+
+      <!-- Mission -->
+      <div class="mission-box">
+        <div class="mission-ar">"نستثمر في 12,000 ساعة دراسية لتكون فرصاً للنمو بدلاً من الإحباط."</div>
+        <div class="mission-en">"We invest in 12,000 classroom hours to become opportunities for growth rather than frustration."</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- Swarm Architecture -->
+      <div>
+        <div class="swarm-section">
+          <div class="swarm-title">5-Agent LangGraph Swarm Architecture</div>
+          <div class="swarm-sub">dynamic handoff tools · shared InMemorySaver · per-message language enforcement</div>
+
+          <div class="swarm-flow">
+            <div class="agent-node">
+              <div class="agent-chip" style="background:linear-gradient(135deg,#1B4F9C,#0E3580);">🎯</div>
+              <div class="agent-name">Orchestrator</div>
+              <div class="agent-role">Routes via<br>handoff tools</div>
+              <div class="agent-tag">entry node</div>
+            </div>
+            <div class="agent-node">
+              <div class="agent-chip" style="background:linear-gradient(135deg,#0B7B74,#065F5A);">🔍</div>
+              <div class="agent-name">Assessment</div>
+              <div class="agent-role">Gathers 4 fields<br>ReAct loop</div>
+              <div class="agent-tag">FIELD_COLLECTED</div>
+            </div>
+            <div class="agent-node">
+              <div class="agent-chip" style="background:linear-gradient(135deg,#7B3F9E,#5E2D80);">📋</div>
+              <div class="agent-name">Planning</div>
+              <div class="agent-role">Generates<br>5-day plan</div>
+              <div class="agent-tag">PLAN_GENERATED</div>
+            </div>
+            <div class="agent-node">
+              <div class="agent-chip" style="background:linear-gradient(135deg,#C9622A,#A54D1E);">🪞</div>
+              <div class="agent-name">Reflection</div>
+              <div class="agent-role">10-check<br>quality gate</div>
+              <div class="agent-tag">REFLECTION_PASSED</div>
+            </div>
+            <div class="agent-node">
+              <div class="agent-chip" style="background:linear-gradient(135deg,#1B7A3E,#125A2D);">⭐</div>
+              <div class="agent-name">Evaluation</div>
+              <div class="agent-role">Scores 1–5<br>rubric</div>
+              <div class="agent-tag">EVAL_SCORE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div>
+        <div class="sec-label">Implemented Features</div>
+        <div class="features-grid">
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#EFF6FF;">🗣️</div>
+            <div class="feat-text">
+              <div class="feat-title">Voice Input (Web Speech API)</div>
+              <div class="feat-desc">Browser-native ar-SA / en-US, zero latency, no backend required. Mic pulses while listening.</div>
+            </div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#F0FFF4;">📎</div>
+            <div class="feat-text">
+              <div class="feat-title">File Upload + Gemini OCR</div>
+              <div class="feat-desc">PDF, PNG, JPG, WEBP → Gemini 2.0 Flash extracts structured insights. Auto-injects into session.</div>
+            </div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#FFF7ED;">🧠</div>
+            <div class="feat-text">
+              <div class="feat-title">Long-Term Memory</div>
+              <div class="feat-desc">Cross-session student history injected into Orchestrator + Planning Agent prompts via Supabase.</div>
+            </div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#F5F3FF;">🌐</div>
+            <div class="feat-text">
+              <div class="feat-title">Per-Message Language Detection</div>
+              <div class="feat-desc">Arabic Unicode range check on every turn. All 5 agents get strict OUTPUT LANGUAGE rules.</div>
+            </div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#FFF1F2;">🛡️</div>
+            <div class="feat-text">
+              <div class="feat-title">4-Layer Guardrails</div>
+              <div class="feat-desc">Input validation → Agent scope → Output safety → Data access. Injected into every agent prompt.</div>
+            </div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#ECFDF5;">✅</div>
+            <div class="feat-text">
+              <div class="feat-title">Human-in-the-Loop Approval</div>
+              <div class="feat-desc">Mandatory teacher review before any plan is saved. PATCH /plans/{id}/approve with score.</div>
+            </div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#EFF6FF;">📡</div>
+            <div class="feat-text">
+              <div class="feat-title">SSE Streaming</div>
+              <div class="feat-desc">/chat/stream endpoint sends real-time agent progress events. Teacher sees which agent is active.</div>
+            </div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="background:#FFFBEB;">📚</div>
+            <div class="feat-text">
+              <div class="feat-title">Diagnosis Skill Files</div>
+              <div class="feat-desc">8 markdown files (ADHD, Autism, Dyslexia, Processing Disorder, templates, rubrics) dynamically injected.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagnoses + Languages Row -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div>
+          <div class="sec-label">Diagnoses Supported</div>
+          <div class="diag-row">
+            <div class="diag-chip" style="background:#EFF6FF;border-color:#BFDBFE;color:#1E40AF;">
+              <div class="d-icon">⚡</div>
+              <div class="d-name">ADHD</div>
+              <div class="d-ar">اضطراب التركيز</div>
+            </div>
+            <div class="diag-chip" style="background:#F5F3FF;border-color:#DDD6FE;color:#5B21B6;">
+              <div class="d-icon">🌈</div>
+              <div class="d-name">Autism</div>
+              <div class="d-ar">التوحد</div>
+            </div>
+            <div class="diag-chip" style="background:#F0FFF4;border-color:#BBF7D0;color:#065F46;">
+              <div class="d-icon">📖</div>
+              <div class="d-name">Dyslexia</div>
+              <div class="d-ar">عسر القراءة</div>
+            </div>
+            <div class="diag-chip" style="background:#FFFBEB;border-color:#FDE68A;color:#92400E;">
+              <div class="d-icon">🔄</div>
+              <div class="d-name">Processing</div>
+              <div class="d-ar">صعوبات المعالجة</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="sec-label">Bilingual System</div>
+          <div class="lang-row">
+            <div class="lang-card">
+              <div class="lang-flag">🇸🇦</div>
+              <div class="lang-name">العربية</div>
+              <div class="lang-note">RTL · ar-SA STT · primary</div>
+            </div>
+            <div class="lang-card">
+              <div class="lang-flag">🇬🇧</div>
+              <div class="lang-name">English</div>
+              <div class="lang-note">LTR · en-US STT · full parity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div>
+        <div class="sec-label">Technology Stack</div>
+        <div class="tech-row">
+          <div class="tech-badge">
+            <div class="tech-dot" style="background:#10A37F;"></div>
+            <span class="tech-name">GPT-4o</span>
+            <span class="tech-role">— LLM + Arabic</span>
+          </div>
+          <div class="tech-badge">
+            <div class="tech-dot" style="background:#4F46E5;"></div>
+            <span class="tech-name">LangGraph Swarm</span>
+            <span class="tech-role">— Agent orchestration</span>
+          </div>
+          <div class="tech-badge">
+            <div class="tech-dot" style="background:#0B7B74;"></div>
+            <span class="tech-name">FastAPI</span>
+            <span class="tech-role">— Python 3.11 backend</span>
+          </div>
+          <div class="tech-badge">
+            <div class="tech-dot" style="background:#61DAFB;"></div>
+            <span class="tech-name">React + Vite</span>
+            <span class="tech-role">— Frontend</span>
+          </div>
+          <div class="tech-badge">
+            <div class="tech-dot" style="background:#3ECF8E;"></div>
+            <span class="tech-name">Supabase</span>
+            <span class="tech-role">— PostgreSQL + auth</span>
+          </div>
+          <div class="tech-badge">
+            <div class="tech-dot" style="background:#4285F4;"></div>
+            <span class="tech-name">Gemini 2.0 Flash</span>
+            <span class="tech-role">— File OCR + analysis</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">localhost:8003 · localhost:5173</div>
+    <div class="footer-center">🇸🇦 Aligned with Vision 2030 · Special Education Sector · مواءمة مع رؤية المملكة 2030 لتمكين قطاع التربية الخاصة</div>
+    <div class="footer-right">Tuwaiq Academy · Agentic AI Bootcamp · 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>
