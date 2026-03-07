@@ -72,14 +72,17 @@ EACH uses a **LangGraph Swarm architecture** where different agents collaborate 
 ---
 ---
 
+---
+
 ## Project Poster
 
 <p align="center">
-  <img src="assets/PHOTO-2026-03-04-23-38-23.jpg" width="900">
+  <img src="EACH/assets/PHOTO-2026-03-04-23-38-23.jpg" width="1000">
 </p>
 
 <p align="center">
-Technical poster describing the EACH system architecture and multi-agent workflow.
+EACH — Every Ability, Celebrated Here  
+Agentic AI platform for personalized special education planning.
 </p>
 
 ---
