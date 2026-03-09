@@ -16,7 +16,7 @@ Agentic AI system for personalized special education planning
 
 # Overview
 
-**EACH** is an agentic AI platform designed to assist special education teachers in creating **personalized weekly learning plans** for students with diverse learning needs.
+**EACH** is an agentic AI platform designed to assist special education teachers in creating **personalized weekly learning plans** 'for now' for students with diverse learning needs.
 
 The system focuses on supporting learners with:
 
@@ -25,6 +25,7 @@ The system focuses on supporting learners with:
 - Dyslexia
 - Processing Disorders
 - Attention and engagement challenges
+- Uknown diagnose is handled by the agent
 
 Instead of relying on a single chatbot response, EACH uses a **multi-agent architecture** where specialized AI agents collaborate to analyze student needs, generate structured plans, review plan quality, and record teacher feedback.
 
